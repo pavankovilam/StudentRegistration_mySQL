@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> Form</title>
+</head>
+<style>
+.form-container{
+ display:flex;
+ justify-content: center;
+ align-items: center;
+}
+</style>
+<body>
+<div class = "form-container">
+<form method="POST" name="StdData" action="">
+<h1> Joining Form</h1>
+<label for="name">Name:</label>&nbsp;<input type="text" id="name" name="name"><br><br>
+<label for="email">Email:</label>&nbsp;<input type="email" id="email" name="email"><br><br>
+<label for="phone">Mobile Number:</label>&nbsp;<input type="tel" id="phone" name="phone"><br><br>
+{% csrf_token %}
+<button type="submit" onclick="status()" style="background-color: #000000; color:#fff;padding:12px 20px;border:none; border-radius:5px; cursor: pointer;">Join Now</button>
+<p id="status"></p>
+</form><br>
+<script>
+  function status(){
+    Sta = document.getElementById("status").innerText = "Thanks For Joining"
+  }
+/* const scriptURL = 'https://script.google.com/macros/s/AKfycbzTXDU-Y-iJF4jcO9cJxw_8fbvviLWKJ4hP2VYV_sNHxGc3tOi9KT3j04pFBErSNXV-/exec'
+const form = document.forms['StdData'] //Form Name 
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+    .finally(document.StdData.reset(),status())
+}) */
+</script> 
+<p id="status"></p>
+</div>
+</body>
+</html>
